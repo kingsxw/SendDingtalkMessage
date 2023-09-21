@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Send Dingtalk ChatBot/CustomBot Messages via API</Title>
+    <Authors>Song Xinwei</Authors>
+    <Description>通过钉钉企业内部应用/机器人/自定义机器人发送单聊/群聊/工作通知</Description>
+    <PackageProjectUrl>https://github.com/kingsxw/SendDingtalkMessage</PackageProjectUrl>
+    <PackageIcon>QQ图片20230518163304.jpg</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Dingtalk;Message;Send;Bot;Robot</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\kings\Desktop\QQ图片20230518163304.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
