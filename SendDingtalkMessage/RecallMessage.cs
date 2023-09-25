@@ -30,6 +30,26 @@ namespace SendDingtalkMessage
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
+        public async Task RecallNailMessage(string openDingId)
+        {
+            await GetToken();
+            var uri = new Uri("https://api.dingtalk.com/v1.0/robot/ding/recall");
+            var body = new
+            {
+                robotCode = request.AppKey,
+                openDingId = openDingId
+            };
+            var response = await client.PostAsJsonAsync(uri, body);
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+            }
+            else
+            {
+                Console.WriteLine("Request failed with status code: " + response.StatusCode);
+            }
+        }
         public async Task RecallGroupMessage(List<string> queryKeys)
         {
             await GetToken();

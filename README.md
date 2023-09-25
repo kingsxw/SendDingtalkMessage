@@ -1,5 +1,33 @@
 ﻿## 通过钉钉企业内部应用/机器人/自定义机器人发送单聊/群聊/工作通知
 
+#### 20230925 V1.0.1 增加发送DING的功能(需专属钉钉或者专业版钉钉)
+
+###### *具体信息参见钉钉文档[发送DING消息](https://open.dingtalk.com/document/orgapp/robot-sends-nail-message)*
+
+- **发送DING**
+
+```c#
+#发送应用内DING
+await Client.SendNailText(string messageText);
+
+#发送短信DING
+await Client.SendNailSMS(string messageText);
+
+#发送电话DING
+await Client.SendNailCall(string messageText);
+```
+
+- **撤回DING：**
+
+```C#
+var openDingId = Client.SendNailText("text");
+Client.RecallNailMessage(openDingId);
+```
+
+
+
+------
+
 
 
 #### 通过企业内部应用/机器人发送消息
@@ -27,7 +55,7 @@ var conversation = new DingtalkConversationInfo
 };
 
 var client = new ChatBotClient(request); #单聊
-client = new ChatBotClient(request,conversation); #单聊+群聊
+var client = new ChatBotClient(request,conversation); #单聊+群聊
 ```
 
 - **发送单聊/群聊消息到用户：**
@@ -39,7 +67,7 @@ client = new ChatBotClient(request,conversation); #单聊+群聊
 await RecallMessage(List<string> queryKeys); #单人
 await RecallGroupMessage(List<string> queryKeys); #群
 #例如:
-var key = Client.SendText("text");
+var key = Client.SendText("text"); 
 await Client.RecallMessage(key.Select(c => c.ToString()).ToList()); 
 
 #发送Text消息
