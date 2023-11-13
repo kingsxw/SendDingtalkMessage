@@ -13,6 +13,7 @@ namespace SendDingtalkMessage
         public async Task RecallMessage(List<string> queryKeys)
         {
             await GetToken();
+            client.DefaultRequestHeaders.Add("x-acs-dingtalk-access-token", token.access_token);
             var uri = new Uri("https://api.dingtalk.com/v1.0/robot/otoMessages/batchRecall");
             var body = new
             {
@@ -33,6 +34,7 @@ namespace SendDingtalkMessage
         public async Task RecallNailMessage(string openDingId)
         {
             await GetToken();
+            client.DefaultRequestHeaders.Add("x-acs-dingtalk-access-token", token.access_token);
             var uri = new Uri("https://api.dingtalk.com/v1.0/robot/ding/recall");
             var body = new
             {
@@ -50,10 +52,34 @@ namespace SendDingtalkMessage
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
+        public async Task RecallPrivateChatMessage(List<string> queryKeys)
+        {
+            await GetToken();
+            client.DefaultRequestHeaders.Add("x-acs-dingtalk-access-token", token.access_token);
+            var uri = new Uri("https://api.dingtalk.com/v1.0/robot/privateChatMessages/batchRecall");
+            var body = new
+            {
+                openConversationId = conversationInfo.ConversationId,
+                robotCode = request.AppKey,
+                processQueryKeys = queryKeys
+            };
+
+            var response = await client.PostAsJsonAsync(uri, body);
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+            }
+            else
+            {
+                Console.WriteLine("Request failed with status code: " + response.StatusCode);
+            }
+        }
         public async Task RecallGroupMessage(List<string> queryKeys)
         {
             await GetToken();
-            var uri = new Uri("https://api.dingtalk.com/v1.0/robot/privateChatMessages/batchRecall");
+            client.DefaultRequestHeaders.Add("x-acs-dingtalk-access-token", token.access_token);
+            var uri = new Uri("https://api.dingtalk.com/v1.0/robot/groupMessages/recall");
             var body = new
             {
                 openConversationId = conversationInfo.ConversationId,

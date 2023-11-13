@@ -1,5 +1,34 @@
 ﻿## 通过钉钉企业内部应用/机器人/自定义机器人发送单聊/群聊/工作通知
 
+
+
+#### **使用方法**
+
+NuGet包管理器搜索SendDingtalkMessage
+
+或
+
+```
+dotnet add package SendDingtalkMessage
+```
+
+
+
+------
+
+
+
+#### 20231113 V1.0.2 错误修复
+
+- 修复撤回功能，补全之前遗漏的x-acs-dingtalk-access-token头
+- 拆分和修正RecallPrivateChatMessage和RecallGroupMessage方法
+
+
+
+------
+
+
+
 #### 20230925 V1.0.1 增加发送DING的功能(需专属钉钉或者专业版钉钉)
 
 ###### *具体信息参见钉钉文档[发送DING消息](https://open.dingtalk.com/document/orgapp/robot-sends-nail-message)*
@@ -128,7 +157,8 @@ await Client.SendJobNotificationLink(string messageTitle, string messageText, st
 
 #发送ActionCard消息
 await Client.SendJobNotificationActionCard(string messageTitle, string messageMarkdownText, string singleTitle, string singleURL, string actionUrl, string buttonTitle, string btnOrientation);
-#发送Text消息
+
+#发送Voice消息
 await Client.SendJobNotificationVoice(string mediaId, long duration);
 
 #发送File消息
