@@ -18,6 +18,15 @@ dotnet add package SendDingtalkMessage
 
 
 
+#### 20231211 V1.0.3 错误修复
+
+- 修复部分SendMessageToGroup方法错误引用SendMessageToUser
+- 修改目标框架，支持.NET7.0和.NET 8.0
+
+------
+
+
+
 #### 20231113 V1.0.2 错误修复
 
 - 修复撤回功能，补全之前遗漏的x-acs-dingtalk-access-token头

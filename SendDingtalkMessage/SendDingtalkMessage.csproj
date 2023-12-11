@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -11,22 +11,35 @@
     <PackageProjectUrl>https://github.com/kingsxw/SendDingtalkMessage</PackageProjectUrl>
     <PackageIcon>QQ图片20230518163304.jpg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+	<IncludeContentInPack>true</IncludeContentInPack>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Dingtalk;Message;Send;Bot;Robot</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\kings\Desktop\QQ图片20230518163304.jpg">
+    <None Include="..\README.md">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="./QQ图片20230518163304.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="README.md">
+    <None Update="./README.md">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 

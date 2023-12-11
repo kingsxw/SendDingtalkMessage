@@ -76,43 +76,43 @@ namespace SendDingtalkMessage
         {
             string msgKey = "sampleActionCard3";
             string msgParam = "{\u0022title\u0022: \u0022" + messageTitle + "\u0022,\u0022text\u0022: \u0022" + messageText + "\u0022,\u0022actionTitle1\u0022: \u0022" + actionTitle1 + "\u0022,\u0022actionURL1\u0022: \u0022" + actionURL1 + "\u0022,\u0022actionTitle2\u0022: \u0022" + actionTitle2 + "\u0022,\u0022actionURL2\u0022: \u0022" + actionURL2 + "\u0022,\u0022actionTitle3\u0022: \u0022" + actionTitle3 + "\u0022,\u0022actionURL3\u0022: \u0022" + actionURL3 + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupActionCard(string messageTitle, string messageText, string actionTitle1, string actionURL1, string actionTitle2, string actionURL2, string actionTitle3, string actionURL3, string actionTitle4, string actionURL4)
         {
             string msgKey = "sampleActionCard4";
             string msgParam = "{\u0022title\u0022: \u0022" + messageTitle + "\u0022,\u0022text\u0022: \u0022" + messageText + "\u0022,\u0022actionTitle1\u0022: \u0022" + actionTitle1 + "\u0022,\u0022actionURL1\u0022: \u0022" + actionURL1 + "\u0022,\u0022actionTitle2\u0022: \u0022" + actionTitle2 + "\u0022,\u0022actionURL2\u0022: \u0022" + actionURL2 + "\u0022,\u0022actionTitle3\u0022: \u0022" + actionTitle3 + "\u0022,\u0022actionURL3\u0022: \u0022" + actionURL3 + "\u0022,\u0022actionTitle4\u0022: \u0022" + actionTitle4 + "\u0022,\u0022actionURL4\u0022: \u0022" + actionURL4 + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupActionCard(string messageTitle, string messageText, string actionTitle1, string actionURL1, string actionTitle2, string actionURL2, string actionTitle3, string actionURL3, string actionTitle4, string actionURL4, string actionTitle5, string actionURL5)
         {
             string msgKey = "sampleActionCard5";
             string msgParam = "{\u0022title\u0022: \u0022" + messageTitle + "\u0022,\u0022text\u0022: \u0022" + messageText + "\u0022,\u0022actionTitle1\u0022: \u0022" + actionTitle1 + "\u0022,\u0022actionURL1\u0022: \u0022" + actionURL1 + "\u0022,\u0022actionTitle2\u0022: \u0022" + actionTitle2 + "\u0022,\u0022actionURL2\u0022: \u0022" + actionURL2 + "\u0022,\u0022actionTitle3\u0022: \u0022" + actionTitle3 + "\u0022,\u0022actionURL3\u0022: \u0022" + actionURL3 + "\u0022,\u0022actionTitle4\u0022: \u0022" + actionTitle4 + "\u0022,\u0022actionURL4\u0022: \u0022" + actionURL4 + "\u0022,\u0022actionTitle5\u0022: \u0022" + actionTitle5 + "\u0022,\u0022actionURL5\u0022: \u0022" + actionURL5 + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupActionCard(string messageTitle, string messageText, string actionTitle1, string actionURL1, string actionTitle2, string actionURL2, string actionTitle3, string actionURL3, string actionTitle4, string actionURL4, string actionTitle5, string actionURL5, string actionTitle6, string actionURL6)
         {
             string msgKey = "sampleActionCard6";
             string msgParam = "{\u0022title\u0022: \u0022" + messageTitle + "\u0022,\u0022text\u0022: \u0022" + messageText + "\u0022,\u0022actionTitle1\u0022: \u0022" + actionTitle1 + "\u0022,\u0022actionURL1\u0022: \u0022" + actionURL1 + "\u0022,\u0022actionTitle2\u0022: \u0022" + actionTitle2 + "\u0022,\u0022actionURL2\u0022: \u0022" + actionURL2 + "\u0022,\u0022actionTitle3\u0022: \u0022" + actionTitle3 + "\u0022,\u0022actionURL3\u0022: \u0022" + actionURL3 + "\u0022,\u0022actionTitle4\u0022: \u0022" + actionTitle4 + "\u0022,\u0022actionURL4\u0022: \u0022" + actionURL4 + "\u0022,\u0022actionTitle5\u0022: \u0022" + actionTitle5 + "\u0022,\u0022actionURL5\u0022: \u0022" + actionURL5 + "\u0022,\u0022actionTitle6\u0022: \u0022" + actionTitle6 + "\u0022,\u0022actionURL6\u0022: \u0022" + actionURL6 + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupAudio(string mediaId, long duration)
         {
             string msgKey = "sampleAudio";
             string msgParam = "{\u0022mediaId\u0022: \u0022" + mediaId + "\u0022,\u0022duration\u0022: \u0022" + duration + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupFile(string mediaId, string fileName, string fileType)
         {
             string msgKey = "sampleFile";
             string msgParam = "{\u0022mediaId\u0022: \u0022" + mediaId + "\u0022,\u0022fileName\u0022: \u0022" + fileName + "\u0022,\u0022fileType\u0022: \u0022" + fileType + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
         public async Task<string?> SendGroupVideo(string messageTitle, string messageText, string picUrl, string messageUrl)
         {
             string msgKey = "sampleVideo";
             string msgParam = "{\u0022title\u0022: \u0022" + messageTitle + "\u0022,\u0022text\u0022: \u0022" + messageText + "\u0022,\u0022picUrl\u0022: \u0022" + picUrl + "\u0022,\u0022messageUrl\u0022: \u0022" + messageUrl + "\u0022}";
-            return await SendMessageToUser(msgKey, msgParam);
+            return await SendMessageToGroup(msgKey, msgParam);
         }
     }
 }
